@@ -31,11 +31,7 @@ function App() {
 
 
   return (
-
-
-
-    <Page style={{ position: 'relative', minHeight: '100vh' }}>
-
+    <>
       <NavHeader>
 
         <div className="container" style={carouselNav}>
@@ -57,15 +53,20 @@ function App() {
         </div>
         <p style={{ color: '#ffffff81', textAlign: 'center', margin: '1em 0' }}>{index + 1} of {components.length}</p>
       </NavHeader>
+      <Page style={{ position: 'relative', minHeight: '100vh' }}>
 
 
 
-      {/* render component */}
-      {components[index]}
+
+
+
+        {/* render component */}
+        {components[index]}
+      </Page>
 
       <GlobalStyle />
 
-    </Page>
+    </>
 
   )
 

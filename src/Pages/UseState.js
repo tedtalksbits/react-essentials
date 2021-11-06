@@ -4,6 +4,7 @@ import { Button } from '../Components/Button'
 import LoginImage from '../images/login.png'
 import LogoutImage from '../images/loginout.png'
 import { darkTheme } from '../data/themeData'
+import SearchBar from '../Components/SearchBar'
 const FullHeight = styled.div`
    /* min-height: 80vh; */
    display: grid;
@@ -35,24 +36,24 @@ const Form = styled.form`
    flex-direction: column;
 `
 
-const TextBox = styled.div`
-   padding: .3rem .5rem;
-   border-radius: 12px;
-   background: ${darkTheme.white};
-   display: flex;
-   align-items: center;
-   gap: .2rem;
-`
+// export const TextBox = styled.div`
+//    padding: .3rem .5rem;
+//    border-radius: 12px;
+//    background: ${darkTheme.white};
+//    display: flex;
+//    align-items: center;
+//    gap: .2rem;
+// `
 
-const Input = styled.input`
-   background: transparent;
-   border: none;
-   padding: none;
-   outline: none;
-   color: white;
-   width: 100%;
-   font-size: 1.2em;
-`
+// export const Input = styled.input`
+//    background: transparent;
+//    border: none;
+//    padding: none;
+//    outline: none;
+//    color: white;
+//    width: 100%;
+//    font-size: 1.2em;
+// `
 const UseState = () => {
    const [isLoggedIn, setIsLoggedIn] = useState(false)
 
@@ -61,7 +62,6 @@ const UseState = () => {
    const handleChange = (e) => {
       setUserName(e.target.value)
 
-      setUserName('')
    }
 
    return (
@@ -79,17 +79,11 @@ const UseState = () => {
             </ImageContainer>
             <Form className="form">
 
-               <TextBox className="input-container">
-
-                  <i className='bx bx-user'></i>
-                  <Input
-                     type="text"
-                     placeholder="name"
-                     required
-                     value={userName}
-                     onChange={handleChange}
-                  />
-               </TextBox>
+               <SearchBar
+                  icon={<i className='bx bx-user'></i>}
+                  handleChange={handleChange}
+                  value={userName}
+               />
                <Button onClick={(e) => {
                   e.preventDefault()
                   setIsLoggedIn(!isLoggedIn)

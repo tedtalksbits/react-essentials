@@ -53,6 +53,16 @@ export const Page = styled.section`
 
 export const NavHeader = styled.header`
 
+   display: grid;
+   grid-template-columns: 1fr min(99ch, 100%) 1fr;
+   padding: 1rem;
+    &> *{
+   grid-column: 2;
+   }
+   .full-bleed {
+   width:100%;
+   grid-column: 1 / 4;
+   }
 
 
 `
