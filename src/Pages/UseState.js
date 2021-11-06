@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Button } from '../Components/Button'
 import LoginImage from '../images/login.png'
@@ -36,58 +36,57 @@ const Form = styled.form`
    flex-direction: column;
 `
 
-// export const TextBox = styled.div`
-//    padding: .3rem .5rem;
-//    border-radius: 12px;
-//    background: ${darkTheme.white};
-//    display: flex;
-//    align-items: center;
-//    gap: .2rem;
-// `
-
-// export const Input = styled.input`
-//    background: transparent;
-//    border: none;
-//    padding: none;
-//    outline: none;
-//    color: white;
-//    width: 100%;
-//    font-size: 1.2em;
-// `
 const UseState = () => {
    const [isLoggedIn, setIsLoggedIn] = useState(false)
-
    const [userName, setUserName] = useState("")
+   const [loggedInUser, setLoggedInUser] = useState("")
 
    const handleChange = (e) => {
       setUserName(e.target.value)
 
+   }
+   const handleLogin = (e) => {
+
+      if (userName === "" && !isLoggedIn) {
+         alert('sign in please')
+      }
+      else {
+
+         setIsLoggedIn(!isLoggedIn)
+         setLoggedInUser(userName)
+         clearInput()
+      }
+
+   }
+   const clearInput = () => {
+      setUserName("");
    }
 
    return (
 
       <div>
 
-         <h1>Use State && Conditional Rendering</h1>
+         <h1>Use State & Conditional Rendering</h1>
 
          <FullHeight>
 
-            <h1 style={{ color: `${darkTheme.primary}` }}>{isLoggedIn ? `Welcome Back ${userName}!` : 'Please sign in'}</h1>
+            <h1 style={{ color: `${darkTheme.primary}`, textTransform: 'capitalize' }}>{isLoggedIn ? `Welcome Back ${loggedInUser}!` : 'Please sign in'}</h1>
             <ImageContainer>
 
                <Image src={isLoggedIn ? LoginImage : LogoutImage} alt="illustration of man holding phone" />
             </ImageContainer>
-            <Form className="form">
+            <Form className="form" >
+               {isLoggedIn ? '' :
 
-               <SearchBar
-                  icon={<i className='bx bx-user'></i>}
-                  handleChange={handleChange}
-                  value={userName}
-               />
-               <Button onClick={(e) => {
+                  <SearchBar
+                     icon={<i className='bx bx-user'></i>}
+                     handleChange={handleChange}
+                     value={userName}
+                  />
+               }
+               <Button type='submit' onClick={(e) => {
                   e.preventDefault()
-                  setIsLoggedIn(!isLoggedIn)
-
+                  handleLogin()
                }}>{isLoggedIn ? 'sign out' : 'sign in'}</Button>
             </Form>
 
