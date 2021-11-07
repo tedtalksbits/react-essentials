@@ -12,40 +12,38 @@ const Item = styled.div`
    backdrop-filter: blur(25px) saturate(6);
    display: inline-block;
 `
-const ItemContainer = styled.div`
-
-`
 const UseEffect = () => {
 
    const [search, setSearch] = useState('');
    const [found, setFound] = useState([])
 
+
    const cars = ["mercedes", "nissan", "tesla", "BMW", "kia", "pontiac", "hyundai", "honda", "renault", "rolls-royce", "mercury", "toyota"]
-   const carsObj = [{
-      "id": 1,
-      "make": "Hyundai",
-      "model": "Santa Fe",
-      "year": 2012,
-      "mileage": 54874
-   }, {
-      "id": 2,
-      "make": "Chevrolet",
-      "model": "Malibu",
-      "year": 2001,
-      "mileage": 50019
-   }, {
-      "id": 3,
-      "make": "Mitsubishi",
-      "model": "RVR",
-      "year": 1992,
-      "mileage": 604
-   }, {
-      "id": 4,
-      "make": "Mazda",
-      "model": "Mazda6",
-      "year": 2011,
-      "mileage": 19891
-   }]
+   // const carsObj = [{
+   //    "id": 1,
+   //    "make": "Hyundai",
+   //    "model": "Santa Fe",
+   //    "year": 2012,
+   //    "mileage": 54874
+   // }, {
+   //    "id": 2,
+   //    "make": "Chevrolet",
+   //    "model": "Malibu",
+   //    "year": 2001,
+   //    "mileage": 50019
+   // }, {
+   //    "id": 3,
+   //    "make": "Mitsubishi",
+   //    "model": "RVR",
+   //    "year": 1992,
+   //    "mileage": 604
+   // }, {
+   //    "id": 4,
+   //    "make": "Mazda",
+   //    "model": "Mazda6",
+   //    "year": 2011,
+   //    "mileage": 19891
+   // }]
    function findItem(query, array) {
 
       return array.filter(el => el.toLowerCase().indexOf(query.toLowerCase()) !== -1)

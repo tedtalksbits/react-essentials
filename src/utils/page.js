@@ -66,3 +66,5 @@ export const NavHeader = styled.header`
 
 
 `
+
+export const b_radius = '20px';

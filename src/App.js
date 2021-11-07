@@ -9,6 +9,7 @@ import UseEffect from './Pages/UseEffect';
 import Chevron from './Components/Chevron';
 import Fetch from './Pages/Fetch';
 import UseReducer from './Pages/UseReducer';
+import Crud from './Pages/Crud';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
     <UseEffect />,
     <UseReducer />,
     <Fetch />,
+    <Crud />
   ]
   const [index, setIndex] = useLocalStorageState("page index", 0)
 

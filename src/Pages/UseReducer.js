@@ -69,11 +69,11 @@ const UseReducer = () => {
 
                <h1>Like me!</h1>
                {liked ?
-                  <i class='bx bxs-heart' onClick={likeToggle}></i>
+                  <i className='bx bxs-heart' onClick={likeToggle}></i>
 
                   :
 
-                  <i class='bx bx-heart' onClick={likeToggle}></i>
+                  <i className='bx bx-heart' onClick={likeToggle}></i>
 
                }
             </Box>

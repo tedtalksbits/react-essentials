@@ -35,11 +35,15 @@ const Form = styled.form`
    align-items: center;
    flex-direction: column;
 `
-
+const Pagination = styled.div`
+   display: grid;
+   place-items: center;
+`
 const UseState = () => {
    const [isLoggedIn, setIsLoggedIn] = useState(false)
    const [userName, setUserName] = useState("")
    const [loggedInUser, setLoggedInUser] = useState("")
+   const [current, setCurrent] = useState(1);
 
    const handleChange = (e) => {
       setUserName(e.target.value)
@@ -91,6 +95,24 @@ const UseState = () => {
             </Form>
 
          </FullHeight>
+         <Pagination>
+
+            <div className="pagination">
+               <Button paginator={true} onClick={() => setCurrent(1)} className={current === 1 && "active first"}>
+                  1
+                  {(current === 1) && " active"}
+               </Button>
+               <Button paginator={true} onClick={() => setCurrent(2)} className={current === 2 && "active"}>
+                  2
+                  {(current === 2) && " active"}
+               </Button>
+               <Button paginator={true} onClick={() => setCurrent(3)} className={current === 3 && "active last"}>
+                  3
+                  {(current === 3) && " active"}
+               </Button>
+
+            </div>
+         </Pagination>
       </div>
 
    )
