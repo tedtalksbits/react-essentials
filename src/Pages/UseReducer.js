@@ -1,5 +1,6 @@
 import React, { useReducer } from 'react'
 import styled from 'styled-components'
+import Modal from '../Components/Modal'
 import { darkTheme } from '../data/themeData'
 
 const IconContainer = styled.div`
@@ -78,6 +79,8 @@ const UseReducer = () => {
                }
             </Box>
          </IconContainer>
+
+         <Modal />
 
       </div>
    )

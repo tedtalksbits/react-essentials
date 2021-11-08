@@ -4,7 +4,7 @@ import { darkTheme } from '../data/themeData'
 import { b_radius } from '../utils/page'
 
 const TextBox = styled.div`
-   padding: .3rem .5rem;
+   padding: .375rem .575rem;
    border-radius: ${b_radius};
    background: ${darkTheme.white};
    display: flex;
@@ -18,10 +18,11 @@ const Input = styled.input`
    outline: none;
    color: white;
    width: 100%;
-   font-size: 1.785em;
+   font-size: 1.5em;
 
    ::placeholder{
       color: ${darkTheme.white};
+      font-size: .875em;
    }
 `
 const SearchBar = ({ icon, handleChange, value, style, placeholder, type }) => {

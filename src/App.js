@@ -34,6 +34,7 @@ function App() {
 
   return (
     <>
+      <div id="modal-bg"></div>
       <NavHeader>
 
         <div className="container" style={carouselNav}>
