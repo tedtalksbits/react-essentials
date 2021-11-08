@@ -5,7 +5,6 @@ import { darkTheme } from '../data/themeData';
 import { Button } from '../Components/Button'
 import FileBase64 from 'react-file-base64';
 import { b_radius } from '../utils/page';
-import Modal, { Invisible, ModalCard, ModalContainer, ModalWrapper } from '../Components/Modal';
 import ModalTwo from '../Components/ModalTwo';
 
 
@@ -76,7 +75,7 @@ const ProfileCardTextContainer = styled.div`
 
 `
 const Crud = () => {
-   const [modalOpen, setModalOpen] = useState(false)
+
    const URL = `https://saving-app-api.herokuapp.com/data`;
    const [data, setData] = useState([]);
    const [post, setPost] = useState({
@@ -164,11 +163,6 @@ const Crud = () => {
    useEffect(() => {
       fetchData()
    }, [updater])
-
-   /************************** MODAL **************************/
-   const handleModal = () => {
-      setModalOpen(!modalOpen);
-   }
 
 
 
